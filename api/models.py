@@ -6,6 +6,10 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['-id']
+
+
 class Student(models.Model):
     full_name = models.CharField(max_length=100)
     age = models.IntegerField(default=10)
