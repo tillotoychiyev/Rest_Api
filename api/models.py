@@ -16,6 +16,10 @@ class Student(models.Model):
     address = models.CharField(max_length=50)
     hobby = models.CharField(max_length=255, blank=True, null=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    create = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.full_name
+
+    class Meta:
+        ordering = ["-id"]
